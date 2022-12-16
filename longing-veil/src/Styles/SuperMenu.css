@@ -1,0 +1,13 @@
+
+
+.supermenu_main_container{
+
+    background-color: white;
+    width: 90%;
+   position: fixed;
+    top: 12%;
+    z-index: 70;
+    left: 3%;
+    height:300px;
+    border: 1px solid green;
+}
