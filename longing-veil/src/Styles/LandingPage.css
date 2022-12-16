@@ -1,0 +1,154 @@
+
+
+
+.banner1_main_container , .banner2_main_container , .banner3_2_category_images , .banner4_main_container{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin: auto;
+    gap: 20px;
+    /* border: 1px solid red; */
+    margin-top: 58px;
+
+
+}
+.Banner1_1{
+
+    width: 68%;
+    border-radius: 20px;
+    overflow: hidden;
+margin-top: 20px;
+
+    /* border: 1px solid red; */
+    /* margin: auto; */
+}
+
+.Banner1_1>img{
+    height: 100%;
+    width: 100%;
+
+}
+
+.banner1_2{
+
+/* border: 1px solid green; */
+border-radius: 20px;
+    overflow: hidden;
+height: 380px;
+margin-top: 20px;
+}
+
+.banner1_2 >img{
+    height: 100%;
+}
+
+
+.banner3_main_container{
+    /* border: 1px solid blue; */
+    margin-top: 30px;
+}
+/* for category text */
+.category_text_container{
+font-family: sans-serif;
+margin: 100px auto;
+text-align: center;
+font-size: 24px;
+max-width: 400px;
+position:relative;
+/* z-index:; */
+left: 40%;
+/* border: 1px solid red; */
+}
+.category_text_container:before{
+content: "";
+display:block;
+width: 720px;
+height:3px;
+ 
+   background-image: linear-gradient(
+    -225deg,
+    #ff057c 0%,
+    #8d0b93 50%,
+    #27f1ff 100%
+  );
+position: absolute;
+left:0;
+top: 50%;
+z-index: -2;
+}
+.category_text_container:after{
+content: "";
+display:block;
+width: 720px;
+height:3px;
+  background-image: linear-gradient(
+    -225deg,
+    #ff057c 0%,
+    #8d0b93 50%,
+    #27f1ff 100%
+  );
+position: absolute;
+right:0;
+top: 50%;
+z-index: -2;
+}
+.category_text_container{
+background:white;
+/* border: 1px solid green; */
+}
+
+
+
+/* for banner 2_1  */
+
+.banner2_1{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    gap: 25px;
+    /* border: 1px solid red; */
+
+}
+
+.img_cont{
+    /* border: 1px solid red; */
+    height: 300px;
+    width: 18%;
+}
+.img_cont>img{
+    height: 100%;
+    width: 100%;
+}
+
+.banner4_1{
+    margin-top: 20px;
+}
+
+.banner5_main_container{
+ margin-top: 30px;
+    /* border: 1px solid red; */
+    width: 100%;
+    
+
+}
+.banner5_1{
+   position: relative;
+   left: 39%;
+    /* border: 1px solid red; */
+    width: 20%;
+
+}
+.banner5_1 > img{
+    height: 100%;
+}
+.banner5_2{
+    margin-top: 10px;
+   position: relative;
+    left: 13%;
+    width: 70%;
+    text-align: center;
+    color: #B7791F;
+    font-family: sans-serif;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
