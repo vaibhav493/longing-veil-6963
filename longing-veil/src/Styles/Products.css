@@ -1,0 +1,79 @@
+
+.main_product_container{
+
+   /* border: 1px solid rgb(66, 88, 96); */
+     
+    /* width: fit-content; */
+    width: 79% ;
+}
+
+.mother_container_products_grid {
+  display: grid;
+  /* border: 1px solid red; */
+  height: auto;
+  /* width: 200px; */
+  gap: 30px;
+  grid-template-columns: repeat(4, 280px);
+}
+
+.product_grid_item {
+
+    position: relative;
+    height: 390px;
+    text-align: center;
+    border: 1px solid rgb(239, 239, 239);
+    /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
+}
+
+.product_img{
+    /* border:1px solid yellow; */
+    height:67%;
+    overflow: hidden;
+}
+.product_img > img{
+    height: 100%;
+    margin: auto;
+    /* border:1px solid blue; */
+    transition: 1.1s ease-in-out;
+}
+
+.product_img > img:hover{
+
+     transform: scale(1.2);
+}
+.favourite_btn{
+    width: fit-content;
+    position: absolute ;
+   
+    top:2%;
+    left: 89%;
+}
+
+.mega_container{
+    display: flex;
+    margin-top: 15px;
+    /* border: 1px solid red; */
+}
+
+.filter_section{
+
+    /* border: 1px dashed rgb(144, 24, 102); */
+     width:18%;
+     position: sticky;
+     top: 25%;
+     
+
+    
+    
+    
+}
+
+.breadCrumb_container_and_banner_cont{
+    display: flex;
+}
+.banner_img_cont{
+    width: 97%;
+    margin-left: 2%;
+    margin-bottom: 25px;
+    
+}

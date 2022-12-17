@@ -1,12 +1,19 @@
 .Shadow_styles {
-  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
   width: 100%;
+  margin-bottom: -20;
   position:sticky;
   top:0;
- background-color: white;
+  background-color: white;
   transition: 0.3s ease;
   z-index: 99;
- 
+  
+}
+
+.Shadow_styles.active{
+ border-bottom: 1px solid rgb(192, 192, 192);
+;
+ box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
 }
 .Navbar_main_container {
   /* border: 1px solid rgb(79, 110, 223); */
@@ -133,3 +140,5 @@
     height: 28px;
   }
 }
+
+ 

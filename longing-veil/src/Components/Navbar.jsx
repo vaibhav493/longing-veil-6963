@@ -1,20 +1,78 @@
+import React from "react";
+import ReactDOM from "react-dom";
 import { useState, useEffect } from "react";
 import "../Styles/Navbar.css";
-
+import { Link, useNavigate } from "react-router-dom";
 import { InputGroup, Input, InputRightElement, Badge } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
 import { FaRegUserCircle, FaCartArrowDown } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import LandingPage from "./LandingPage";
-import Footer from "./Footer";
-import SuperMenu from '../Other/SuperMenu'
+import { GrUserAdmin } from "react-icons/gr";
+import { FiUserCheck } from "react-icons/fi";
+import { MdOutlineFavorite, MdLogout } from "react-icons/md";
+import { Menu, Box, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
 
 export default function Navbar() {
-
-  const [ superMenu , viewSuperMenu ] = useState(false)
+  const redirect = useNavigate();
   const r = 1;
   let product_count = <div className="product_count">{r}</div>;
-  
+  const [showMenu, setShowMenu] = useState(false);
+
+  const [showNav_Shadow, setShowNav_Shadow] = useState(false);
+
+  const checkScrollingValue = () => {
+    if (window.scrollY >= 21) {
+      setShowNav_Shadow(true);
+    } else {
+      setShowNav_Shadow(false);
+    }
+  };
+
+  window.addEventListener("scroll", checkScrollingValue);
+
+  const UserMenu = () => {
+    return (
+      <Menu>
+        <MenuButton mt="6px">
+          {<FaRegUserCircle size="28" color="#2C5282" />}
+        </MenuButton>
+        <MenuList>
+          <Link to={"/login"}>
+            <MenuItem>
+              <FiUserCheck />
+              <Box as="span" ml="10px">
+                Log In
+              </Box>
+            </MenuItem>
+          </Link>
+          <Link to="/login">
+            <MenuItem>
+              <GrUserAdmin size="20px" />
+              <Box ml="10px" as="span">
+                Login as Admin
+              </Box>
+            </MenuItem>
+          </Link>
+          <Link>
+            <MenuItem>
+              <MdOutlineFavorite color="red" />
+              <Box as="span" ml="10px">
+                Favorite
+              </Box>{" "}
+            </MenuItem>
+          </Link>
+          <Link>
+            <MenuItem>
+              <MdLogout />
+              <Box as="span" ml="10px">
+                Log Out
+              </Box>
+            </MenuItem>
+          </Link>
+        </MenuList>
+      </Menu>
+    );
+  };
+
   const category = [
     "All",
     "New and Now",
@@ -31,17 +89,19 @@ export default function Navbar() {
       <div className="gradient_banner">
         <p>Get 50% off on SBI credit Card !!</p>
       </div>
-       
-       
-    
-        <SuperMenu style={{ display: superMenu ? "block" : "none" }} />
-      
 
-      <div className="Shadow_styles">
+      {/* <SuperMenu style={{ display: showMenu ? "block" : "none" }} /> */}
+
+      <div
+        className={showNav_Shadow ? "Shadow_styles active" : "Shadow_styles"}
+      >
         <div className="Navbar_main_container">
           <div
+            title="Go to home"
+            onClick={() => {
+              redirect("/");
+            }}
             className="logo_container"
-          
           >
             <img src="/Logo2.jpg" alt="logo..." />
           </div>
@@ -63,7 +123,7 @@ export default function Navbar() {
               </InputGroup>
             </div>
             <div className="user_signup_icon_container">
-              <FaRegUserCircle size="27" color="#2C5282" />
+              <UserMenu />
             </div>
             <div className="cart_icon_container">
               <FaCartArrowDown size="27" color="#2C5282" />
@@ -71,30 +131,16 @@ export default function Navbar() {
             </div>
           </div>
         </div>
-        <div
-          className="category_container"
-          
-        >
-          {category.map((ele,ind) => {
+        <div className="category_container">
+          {category.map((ele, ind) => {
             return (
-              <Link
-              key={ind}
-               className='mega'
-                border="1px"
-                onMouseOver={() => {
-                  viewSuperMenu(true);
-                }}
-              >
+              <Link to={"/products"} key={ind}>
                 {ele.toUpperCase()}
               </Link>
             );
           })}
         </div>
       </div>
-
-      <LandingPage />
-
-      <Footer />
     </>
   );
 }
