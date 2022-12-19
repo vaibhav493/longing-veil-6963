@@ -83,8 +83,12 @@
 .Input_field{
   height: 36px;
   width: 400px;
+  transition: 0.3s ease-in-out;
 }
+.Input_field:hover{
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
 
+}
 .category_container {
   display: flex;
   width: 100%;
@@ -98,6 +102,18 @@
   font-size: 13px;
 }
 
+.category_links{
+
+  border: 2px solid white;
+  padding: 3px 6px;
+  color: rgb(30, 30, 30);
+  transition: 0.2s ease-in-out;
+}
+
+.category_links:hover{
+   border-bottom: 2px solid palevioletred; ;
+   
+}
 
 /* media queries of Navbar and Category div */
 

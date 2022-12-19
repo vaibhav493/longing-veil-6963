@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { useState, useEffect } from "react";
+import SuperMenu from "../Other/SuperMenu";
 import "../Styles/Navbar.css";
 import { Link, useNavigate } from "react-router-dom";
 import { InputGroup, Input, InputRightElement, Badge } from "@chakra-ui/react";
@@ -10,12 +11,18 @@ import { GrUserAdmin } from "react-icons/gr";
 import { FiUserCheck } from "react-icons/fi";
 import { MdOutlineFavorite, MdLogout } from "react-icons/md";
 import { Menu, Box, MenuButton, MenuList, MenuItem } from "@chakra-ui/react";
+import { CartContext } from "../Context/CartContext";
+import { useContext } from "react";
 
 export default function Navbar() {
   const redirect = useNavigate();
-  const r = 1;
-  let product_count = <div className="product_count">{r}</div>;
+  const { cart_data } = useContext(CartContext);
+
+  let product_count = (
+    <div className="product_count">{cart_data.total_cartData}</div>
+  );
   const [showMenu, setShowMenu] = useState(false);
+  const [value, setValue] = useState("");
 
   const [showNav_Shadow, setShowNav_Shadow] = useState(false);
 
@@ -90,8 +97,6 @@ export default function Navbar() {
         <p>Get 50% off on SBI credit Card !!</p>
       </div>
 
-      {/* <SuperMenu style={{ display: showMenu ? "block" : "none" }} /> */}
-
       <div
         className={showNav_Shadow ? "Shadow_styles active" : "Shadow_styles"}
       >
@@ -110,6 +115,8 @@ export default function Navbar() {
             <div className="search_boex_container Input_field">
               <InputGroup className="Input_field">
                 <Input
+                  value={value}
+                  onChange={({ target }) => setValue(target.value)}
                   className="Input_field"
                   borderColor="blue"
                   placeholder="search by fregrence or products... "
@@ -122,25 +129,32 @@ export default function Navbar() {
                 />
               </InputGroup>
             </div>
+
             <div className="user_signup_icon_container">
               <UserMenu />
             </div>
-            <div className="cart_icon_container">
+            <div
+              className="cart_icon_container"
+              onClick={() => redirect("/cartpage")}
+            >
               <FaCartArrowDown size="27" color="#2C5282" />
-              {r > 0 ? product_count : null}
+              {cart_data.total_cartData > 0 ? product_count : null}
             </div>
           </div>
         </div>
         <div className="category_container">
           {category.map((ele, ind) => {
             return (
-              <Link to={"/products"} key={ind}>
-                {ele.toUpperCase()}
-              </Link>
+              <div key={ind} className="category_links">
+                <Link color="black" to={"/products"} key={ind}>
+                  {ele.toUpperCase()}
+                </Link>
+              </div>
             );
           })}
         </div>
       </div>
+      <SuperMenu value={value} />
     </>
   );
 }

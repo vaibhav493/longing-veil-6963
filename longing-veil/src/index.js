@@ -1,20 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import {  BrowserRouter } from 'react-router-dom'
-import {  ChakraProvider } from '@chakra-ui/react'
-import ProductContextProvider from './Context/ProductContext';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react";
+import ProductContextProvider from "./Context/ProductContext";
+import CartContextProvider from "./Context/CartContext";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-  <ProductContextProvider>
-  <ChakraProvider>
-    <App />
-  </ChakraProvider>
-  </ProductContextProvider>
+    <ProductContextProvider>
+      <CartContextProvider>
+        <ChakraProvider>
+          <App />
+        </ChakraProvider>
+      </CartContextProvider>
+    </ProductContextProvider>
   </BrowserRouter>
 );
 

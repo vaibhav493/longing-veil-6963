@@ -1,0 +1,10 @@
+
+
+
+.main_container_breadCrumbs{
+display: grid;
+align-items: center;
+    border-bottom: 1px solid rgb(223, 223, 223);
+    height: 50px;
+ background-color:#e2edf8;
+}
