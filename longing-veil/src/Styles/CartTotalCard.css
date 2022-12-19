@@ -1,0 +1,114 @@
+.mother_container {
+  border: 1px solid rgb(210, 210, 210);
+  position: fixed;
+  width: 22%;
+  height: 230px;
+  top: 23%;
+  left: 74%;
+  background-color: #bee3f8;
+ box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.product_total_main_container {
+  display: flex;
+
+  padding-bottom: 10px;
+/* background-color: #EBF8FF; */
+  padding-top: 20px;
+  justify-content: space-between;
+}
+
+.bills_container {
+  width: 66%;
+  /* border-right: 1px solid rgb(141, 141, 141); */
+  height: 72%;
+}
+
+.bills_container > p {
+  margin-left: 10px;
+}
+
+.total1 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.total2,
+.total3 {
+  font-size: 12px;
+}
+.bills_price_container {
+  height: 72%;
+  width: 30%;
+  /* border: 1px solid red; */
+}
+
+.price1 {
+  font-size: 16px;
+  margin-bottom: 10px;
+
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.price2,
+.price3 {
+  font-size: 13px;
+}
+
+.title4 {
+  margin-top: 10px;
+
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: rgb(233, 35, 35);
+}
+
+.button_allTotal_container {
+  /* border-top: 1px solid green; */
+  height: 13%;
+  margin-top: 2px;
+  padding-left: 2px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.master_total_container {
+  width: 66%;
+  /* border: 1px solid green; */
+  font-size: 15px;
+  letter-spacing: 1px;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.master_total {
+  font-size: 15px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  margin-left: 9px;
+  margin-top: 5px;
+  color: rgb(177, 38, 112);
+  font-weight: bold;
+}
+.master_t__price {
+  width: 30%;
+  margin-right: 5px;
+  /* border: 1px solid blue; */
+}
+
+.master_T_total {
+  font-size: 16px;
+  margin-top: 5px;
+  color: rgb(177, 38, 112);
+  font-weight: bolder;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.buttons_container {
+  margin-top: 7px;
+}
+
+ 

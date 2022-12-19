@@ -1,12 +1,14 @@
 import ProductFilters from "../Other/ProductFilters";
 import { useState, useEffect, useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import Loading from "../Other/Loading";
 import "../Styles/Products.css";
 import { BsCartPlus } from "react-icons/bs";
 import { FiHeart } from "react-icons/fi";
- import { ToastContainer, toast } from "react-toastify";
- import "react-toastify/dist/ReactToastify.css";
- import Footer from '../Components/Footer'
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Footer from "../Components/Footer";
+import { CartContext } from "../Context/CartContext";
 
 import {
   Breadcrumb,
@@ -17,27 +19,19 @@ import {
 } from "@chakra-ui/react";
 
 import { productContext } from "../Context/ProductContext";
+import {ChevronRightIcon} from '@chakra-ui/icons'
 
 export default function Products() {
-  const { all_products, isLoading } = useContext(productContext);
-  const Alert_addtoCart = () => {
-    toast.success("Added to Cart !", {
-      position: "bottom-left",
-      autoClose: 3000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "dark",
-    });
-  };
+  console.log("ran product component");
+  const reDirect = useNavigate();
+  const { allProducts, Get_Single_Product } = useContext(productContext);
+  const { updateCartData } = useContext(CartContext);
+  // console.log('indide->',all_products)
 
   const Action_buttons = () => {
     return (
       <>
         <Button
-        onClick={Alert_addtoCart}
           w="160px"
           h="32px"
           mt="8px"
@@ -54,9 +48,9 @@ export default function Products() {
     );
   };
 
-  if (isLoading) {
+  if (allProducts.isLoading) {
     return (
-      <div style={{ marginTop: "20%", marginLeft: "48%" }}>
+      <div>
         <Loading />
       </div>
     );
@@ -64,19 +58,28 @@ export default function Products() {
 
   return (
     <>
-      <div className="breadCrumb_container_and_banner_cont">
-        <div>
-          <Breadcrumb>
+      <div
+        style={{ backgroundColor: "#e2edf8" }}
+        className="breadCrumb_container_and_banner_cont"
+      >
+        <div style={{ width: "100%", paddingBottom: "5px" }}>
+          <Breadcrumb
+          ml='30px'
+          mb='12px'
+          mt='12px'
+        
+            separator={<ChevronRightIcon color="gray.500" />}
+          >
             <BreadcrumbItem>
-              <BreadcrumbLink>Home</BreadcrumbLink>
+              <BreadcrumbLink>
+                <Link to="/">Home</Link>
+              </BreadcrumbLink>
             </BreadcrumbItem>
-
-            <BreadcrumbItem>
-              <BreadcrumbLink href="#">Docs</BreadcrumbLink>
+            <BreadcrumbItem color="red">
+              <BreadcrumbLink href="#">Products</BreadcrumbLink>
             </BreadcrumbItem>
-
             <BreadcrumbItem isCurrentPage>
-              <BreadcrumbLink href="#">Breadcrumb</BreadcrumbLink>
+              <BreadcrumbLink></BreadcrumbLink>
             </BreadcrumbItem>
           </Breadcrumb>
         </div>
@@ -95,33 +98,51 @@ export default function Products() {
             />
           </div>
           <div className="mother_container_products_grid">
-            {all_products.map((ele) => {
+            {allProducts.all_products.map((ele, index) => {
               return (
-                <div key={ele.id} className="product_grid_item">
-                  <div className="product_img">
-                    <img src={ele.image} alt="loading..." />
+                <div
+                  style={{ backgroundColor: "white" }}
+                  key={ele.id}
+                  className="product_grid_item"
+                  data-aos="fade-up"
+                  data-aos-offset="127"
+                >
+                  <div
+                    className="product_img"
+                    onClick={() => {
+                      Get_Single_Product(allProducts.curr_category, ele.id);
+                      reDirect("/single_product");
+                    }}
+                  >
+                    <img src={ele.productImage} alt="loading..." />
                   </div>
+
                   <div className="produnct_name">
-                    <h4>{ele.link}</h4>
+                    <h4>{ele.productName}</h4>
                   </div>
                   <div className="sub_name_category">
                     {/* <p>{ele.sub-title}</p> */}
                   </div>
                   <div className="price_cont">
-                    <p>{ele.value}</p>
+                    <p>
+                      {"$"}
+                      {ele.productPrice}
+                    </p>
                   </div>
-                  <div className="offer_div">
-                    <p>{""}</p>
+                  <div
+                    className="offer_div"
+                    style={{ fontSize: "11px", color: "red" }}
+                  >
+                    <p> total reviews : {ele.ratingCount}</p>
                   </div>
-                  <div className="buttons_action">
+                  <div
+                    className="buttons_action"
+                    onClick={() => updateCartData({ ...ele, quantity: 1 })}
+                  >
                     <Action_buttons />
                   </div>
                   <div className="favourite_btn">
-                    <FiHeart
-                      color="#C53030
-"
-                      size="17px"
-                    />
+                    <FiHeart color="#C53030" size="17px" />
                   </div>
                 </div>
               );
@@ -129,8 +150,7 @@ export default function Products() {
           </div>
         </div>
       </div>
-      <Footer/>
-      <ToastContainer />
+      <Footer />
     </>
   );
 }

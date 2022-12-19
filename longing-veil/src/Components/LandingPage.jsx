@@ -1,12 +1,16 @@
- 
-import React from "react";
-import ReactDOM from "react-dom";
 import "../Styles/LandingPage.css";
 import Footer from "./Footer";
+import { productContext } from "../Context/ProductContext";
+import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function LandingPage() {
+
+  console.log('ran landingPage component');
+  const reDirect = useNavigate();
+  const { category_filter } = useContext(productContext);
   return (
-    <div>
+    <div >
       <div className="banner1_main_container anime">
         <div className="Banner1_1">
           <img
@@ -55,7 +59,13 @@ export default function LandingPage() {
         <span className="category_text_container">| SHOP BY CATEGORY |</span>
       </div>
       <div className="banner3_2_category_images" data-aos="fade-up">
-        <div className="img_cont">
+        <div
+          className="img_cont"
+          onClick={() => {
+            category_filter("ALLFRAGRANCE");
+            reDirect("/products");
+          }}
+        >
           <img
             src="https://media6.ppl-media.com/tr:w-320,ar-360-463,c-at_max,pr-true,dpr-2/mediafiles/ecomm/misc/1654781843_fragrance.png"
             alt=""

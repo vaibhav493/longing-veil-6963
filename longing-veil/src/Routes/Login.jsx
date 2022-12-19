@@ -19,6 +19,8 @@ import {
 import Footer from "../Components/Footer";
 
 export default function SimpleCard() {
+
+  console.log('ran Login component')
   let color = ` linear-gradient(
     -225deg,
     #ff057c 0%,

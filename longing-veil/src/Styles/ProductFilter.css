@@ -1,45 +1,66 @@
-.Main_container_ProFilter{
-
-    width:100%;
-    height:fit-content;
-   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
-
-
+.Main_container_ProFilter {
+  width: 100%;
+  height: fit-content;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+    rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
 }
 
-.container_product_filter{
-
-    margin-left: 20px;
-    margin-right: 10px;
+.container_product_filter {
+  margin-left: 20px;
+  margin-right: 10px;
 }
 
-.category_heading{
-    margin: 8px;
-font-size: 16px;
-     font-weight:400;
-    /* text-decoration: underline; */
-    color: black;
+.category_heading {
+  box-shadow: none;
 }
 
-.sub_Category{
-
-    color: rgb(96, 96, 96);
-    font-size: 11px;
-
+.sub_Category {
+  color: rgb(82, 82, 82);
+  font-size: 12px;
 }
-.cont1_pro_filter{
+.Single_product_text {
+  font-size: 16px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-transform: uppercase;
 
-    border-bottom: 1px solid rgb(202, 202, 202);
-    padding: 8px;
-    margin-top: 8px;
-    /* margin: 15px 5px 5px 5px; */
+  /* text-decoration: underline; */
+  color: rgb(79, 79, 79);
+}
+.cont1_pro_filter {
+  border-bottom: 1px solid rgb(202, 202, 202);
+  padding: 8px;
+  margin-top: 8px;
+  /* margin: 15px 5px 5px 5px; */
 }
 
-.sub_Category{
-    margin: 5px;
-    cursor: pointer;
+.sub_Category {
+  margin: 5px;
+  cursor: pointer;
 }
-.sub_Category:hover{
-    text-decoration: underline;
-    transition: 0.3s ease-in-out;
+.sub_Category:hover {
+  text-decoration: underline;
+  transition: 0.3s ease-in-out;
+}
+
+.single_product_page_list {
+  text-transform: uppercase;
+}
+.container_single_product {
+  /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+}
+
+.single_product_fontstyle {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+/* 
+this is for single product page question ans . . . */
+
+.main_container_question_ans {
+  width: 20%;
+  height: 500px;
+  border: 1px solid red;
+  background-color: red;
 }

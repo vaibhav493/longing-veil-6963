@@ -1,0 +1,141 @@
+
+.main_cart_container{
+    width: 71%;
+    margin-left: 5%;
+    margin-top: 35px;
+    /* background-color: red; */
+    /* border: 1px solid red; */
+}
+
+.product_card_container{
+    margin-top: 10px;
+    background-color: white;
+    display: flex;
+    border: 1px solid rgb(217, 214, 214);
+    width: 95%;
+    height: 190px;
+    padding-bottom: 8px;
+  
+}
+
+.product_img_container{
+    width: 17%;
+    height: 100%;
+    overflow: hidden;
+    /* border: 1px solid blue; */
+}
+.product_img_container>img{
+    margin: auto;
+    height: 80%;
+    margin-top: 20px;
+}
+
+.product_details_container{
+   padding-left: 8px;
+    width: 30%;
+       height: 100%;
+       /* border : 1px solid rgb(190, 190, 190); */
+
+}
+.product_name{
+    padding-bottom: 5px;
+    border-bottom: 1px solid;
+    margin-top: 25px;
+    text-transform: uppercase;
+    font-weight:600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(204, 53, 133);
+}
+.product_category{
+    margin-top: 12px;
+}
+.product_category, .product_id,.product_price{
+    letter-spacing: 1px;
+    color: rgb(86, 86, 86);
+    font-size: 12px;
+}
+
+.product_offer{
+    margin-top: 5px;
+    width: 94%;
+    /* border: 1px solid; */
+    letter-spacing: 1px;
+
+    font-size: 10px;
+color: rgb(255, 74, 74);
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;  
+}
+.product_price_container{
+
+    /* border: 1px solid yellow; */
+    width: 13%;
+      padding-bottom: 5px;
+      
+    text-transform: uppercase;
+    font-weight:700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(204, 53, 133);
+    
+}
+.product_price_container>p{
+    margin-top: 20%;
+    margin-left: 30px;
+}
+.price{
+    color: grey;
+    font-size: 18px;
+}
+.product_quantity_changer_container{
+    /* border: 1px solid green; */
+    width: 16%;
+     
+}
+.quantity_button_cont{
+    margin-top: 12%;
+    margin-left: 6%;
+
+}
+.product_quantity{
+     
+      padding-bottom: 5px;
+      margin-top: 16%;
+    text-transform: uppercase;
+    font-weight:700;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(204, 53, 133);
+}
+
+.delete_button_container{
+
+    width: 12%;
+   
+}
+.delete_button{
+    margin-top: 62%;
+    margin-left: 30px;
+}
+
+.Bag_title{
+    width: 60%;
+   padding-bottom: 5px;
+    border-bottom: 1px solid;
+    margin-left: 5%;
+    margin-top: 25px;
+    text-transform: uppercase;
+    font-weight:600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(84, 84, 84);
+
+}
+.total_items{
+   
+        width: 40%;
+   padding-bottom: 5px;
+    border-bottom: 1px solid;
+    margin-left: 5%;
+    margin-top: 25px;
+    text-transform: uppercase;
+    font-weight:600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+       color: rgb(177, 38, 112);
+}
