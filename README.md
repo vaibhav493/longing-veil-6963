@@ -28,6 +28,6 @@ So , this is my Construct Week projet which is an Ecommerce Website  VW naturals
   
 Here below you can see some screen shots : -   
   
-     
+      ![Logo2](https://user-images.githubusercontent.com/107527535/208638147-8ed8ce5c-73cf-47ef-9e09-beb4259ec3a5.jpg)
 
    
