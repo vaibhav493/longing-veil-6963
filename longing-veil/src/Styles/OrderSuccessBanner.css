@@ -1,0 +1,71 @@
+
+.main_container{
+
+    
+    width: 100%;
+  
+    padding: 10px;
+    
+}
+
+.success_img_banner{
+width: 41%;
+overflow: hidden;
+margin: auto;
+height: 28%;
+    /* border: 1px solid green; */
+}
+
+.success_img_banner> img{
+    height: 100%;
+    transform: scale(2);
+}
+.succsess_title1{
+    /* border: 1px solid green; */
+    width: fit-content;
+    margin: auto;
+     text-transform: uppercase;
+    font-weight:600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(151, 31, 95);
+}
+.succsess_title2{
+    border-bottom: 1px solid rgb(113, 113, 113);
+    width: fit-content;
+    margin: auto;
+    font-size: 14px;
+     text-transform: 
+     uppercase;
+    font-weight:600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(41, 121, 15);
+}
+
+ 
+
+.productbills , .productPrice{
+
+    border-bottom: 1px solid rgb(113, 113, 113);
+    width: fit-content;
+    margin: auto;
+    font-size: 11px;
+     text-transform: 
+     uppercase;
+    font-weight:500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(16, 18, 15);
+}
+
+.total_cart_items,.total_price{
+
+    
+    border-bottom: 1px solid rgb(113, 113, 113);
+    width: fit-content;
+    margin: auto;
+    font-size: 14px;
+     text-transform: 
+     uppercase;
+    font-weight:600;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(33, 33, 33);
+}

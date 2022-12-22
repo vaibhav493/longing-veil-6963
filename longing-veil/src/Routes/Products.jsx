@@ -9,6 +9,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Footer from "../Components/Footer";
 import { CartContext } from "../Context/CartContext";
+import { useRef } from "react";
 
 import {
   Breadcrumb,
@@ -19,9 +20,10 @@ import {
 } from "@chakra-ui/react";
 
 import { productContext } from "../Context/ProductContext";
-import {ChevronRightIcon} from '@chakra-ui/icons'
+import { ChevronRightIcon } from "@chakra-ui/icons";
 
 export default function Products() {
+  const scrollTop = useRef(null);
   console.log("ran product component");
   const reDirect = useNavigate();
   const { allProducts, Get_Single_Product } = useContext(productContext);
@@ -48,6 +50,20 @@ export default function Products() {
     );
   };
 
+  // const scrollTopFunc = () =>{
+  //   scrollTop.current?.scrollIntoView({
+  //     behavior: "smooth",
+       
+  //     inline: "nearest",
+  //   });
+
+  // }
+
+  // useEffect(() => {
+  //   scrollTopFunc()
+    
+  // }, []);
+
   if (allProducts.isLoading) {
     return (
       <div>
@@ -58,16 +74,16 @@ export default function Products() {
 
   return (
     <>
+      <div ref={scrollTop}></div>
       <div
         style={{ backgroundColor: "#e2edf8" }}
         className="breadCrumb_container_and_banner_cont"
       >
         <div style={{ width: "100%", paddingBottom: "5px" }}>
           <Breadcrumb
-          ml='30px'
-          mb='12px'
-          mt='12px'
-        
+            ml="30px"
+            mb="12px"
+            mt="12px"
             separator={<ChevronRightIcon color="gray.500" />}
           >
             <BreadcrumbItem>
@@ -150,6 +166,7 @@ export default function Products() {
           </div>
         </div>
       </div>
+      {/* <button onClick={scrollTopFunc}>GO TO TOP</button> */}
       <Footer />
     </>
   );

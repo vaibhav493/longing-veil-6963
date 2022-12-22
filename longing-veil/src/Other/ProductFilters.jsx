@@ -14,7 +14,8 @@ import {
 import { MinusIcon, AddIcon } from "@chakra-ui/icons";
 
 export default function ProductFilters() {
-  const { category_filter, sort_products } = useContext(productContext);
+  const { category_filter, sort_products, allProducts } =
+    useContext(productContext);
   const all_aromatherapy = ["ALL AROMATHERAPY", "MOISTURIZERS"];
 
   const Bath_shower_category = [
@@ -78,6 +79,13 @@ export default function ProductFilters() {
                 </h2>
                 <AccordionPanel pb={4}>
                   <p
+                    style={{
+                      color:
+                        allProducts.current_selected &&
+                        allProducts.current_selected_action === "L_t_H"
+                          ? "red"
+                          : null,
+                    }}
                     onClick={() => sort_products("L_t_H", "price")}
                     className="sub_Category"
                   >

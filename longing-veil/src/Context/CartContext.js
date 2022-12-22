@@ -93,6 +93,10 @@ export default function CartContextProvider({ children }) {
     });
   };
 
+  const send_Data_localStorage = () => {
+       
+  }
+
   return (
     <>
       <CartContext.Provider

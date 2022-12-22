@@ -10,7 +10,7 @@ export default function LandingPage() {
   const reDirect = useNavigate();
   const { category_filter } = useContext(productContext);
   return (
-    <div >
+    <div>
       <div className="banner1_main_container anime">
         <div className="Banner1_1">
           <img
@@ -94,7 +94,7 @@ export default function LandingPage() {
       <div className="banner4_main_container" data-aos="fade-up">
         <div className="banner4_1">
           <img
-            src="https://media6.ppl-media.com/tr:w-1280,c-at_max,pr-true,dpr-2/mediafiles/ecomm/misc/1661349188_discover-all-products-on-purplle-web.jpg"
+            src="https://media6.ppl-media.com/tr:dpr-2/mediafiles/ecomm/misc/1671428262_generic-banner-thick-strip-web-2.gif?tr=f-gif"
             alt=""
           />
         </div>
