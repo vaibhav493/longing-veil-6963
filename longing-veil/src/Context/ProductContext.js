@@ -16,6 +16,8 @@ export default function ProductContextProvider({ children }) {
     single_product_loading: true,
     isError: false,
     curr_category: "allProducts",
+    current_selected :false,
+    current_selected_action :null
   };
   const [allProducts, setAllProducts] = useState(init_product_data);
 
@@ -71,7 +73,12 @@ export default function ProductContextProvider({ children }) {
   //function to sort product by price and reviews
 
   const sort_products = (type, dataType) => {
-    setAllProducts({ ...allProducts, isLoading: true });
+    setAllProducts({
+      ...allProducts,
+      isLoading: true,
+      current_selected_action: type,
+      current_selected:true
+    });
     let sorted_data;
 
     if (dataType === "price") {
@@ -99,7 +106,7 @@ export default function ProductContextProvider({ children }) {
     setAllProducts({
       ...allProducts,
       all_products: sorted_data,
-      isLoading: false,
+      isLoading: false
     });
   };
 

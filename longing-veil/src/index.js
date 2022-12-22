@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { ChakraProvider } from "@chakra-ui/react";
 import ProductContextProvider from "./Context/ProductContext";
 import CartContextProvider from "./Context/CartContext";
+import AuthContextProvider from "./Context/AuthContextProvider";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,7 +15,10 @@ root.render(
     <ProductContextProvider>
       <CartContextProvider>
         <ChakraProvider>
+          <AuthContextProvider>
+
           <App />
+          </AuthContextProvider>
         </ChakraProvider>
       </CartContextProvider>
     </ProductContextProvider>

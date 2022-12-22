@@ -4,7 +4,7 @@ import { Spinner } from "@chakra-ui/react";
 
 export default function Loading() {
   return (
-    <div style={{ marginTop: "19%", marginLeft: "48%" }}>
+    <div style={{zIndex:'123', marginTop: "19%", marginLeft: "48%" }}>
       <Spinner
         thickness="4px"
         speed="0.65s"

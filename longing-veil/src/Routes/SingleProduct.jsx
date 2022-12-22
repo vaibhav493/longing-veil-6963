@@ -91,7 +91,7 @@ export default function SingleProduct() {
           </Box>
 
           {/* //for product details */}
-          <Box w="40%" h="90%">
+          <Box mt='30px' w="40%" h="90%">
             <Box
               pr="10px"
               pb="5px"

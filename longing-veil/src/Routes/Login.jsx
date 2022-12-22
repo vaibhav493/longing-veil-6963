@@ -1,6 +1,10 @@
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../Context/AuthContextProvider";
+import { useState, useContext } from "react";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-import React from "react";
-import ReactDOM from "react-dom";
 import {
   Flex,
   Box,
@@ -9,18 +13,31 @@ import {
   Input,
   Checkbox,
   Stack,
-  Link,
   Button,
-  Heading,
   Image,
-  Text,
-  useColorModeValue,
 } from "@chakra-ui/react";
 import Footer from "../Components/Footer";
 
-export default function SimpleCard() {
+export default function Login() {
+  const redirect = useNavigate();
+  const { Login } = useContext(AuthContext);
+  const triggerAlert = () => {
+    toast.success("Login Successfully! Redirected to home product page", {
+      position: "bottom-left",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "colored",
+    });
 
-  console.log('ran Login component')
+  };
+
+  const handleSubmit = () => {
+    Login();
+  };
   let color = ` linear-gradient(
     -225deg,
     #ff057c 0%,
@@ -69,6 +86,15 @@ export default function SimpleCard() {
                 </Stack>
                 <Button
                   bg={color}
+                  onClick={() => {
+                    triggerAlert();
+                    handleSubmit();
+                    setTimeout(() => {
+                       redirect("/products");
+                      
+                    }, 1000);
+
+                  }}
                   color={"white"}
                   _hover={{
                     bg: "pink",
@@ -86,6 +112,7 @@ export default function SimpleCard() {
         </Box>
       </Flex>
       <Footer />
+      <ToastContainer />
     </>
   );
 }
